@@ -98,17 +98,24 @@ const expected9 = "567765";
  * @param {string} str
  * @returns {string} The longest palindromic substring from the given string.
  */
+//!Solution revised
 function longestPalindromicSubstring(str) { 
 //create substring to then iterate through - checking if palindrome
 let palinLong = ""
 for (let i = 0; i < str.length; i++) {
     for (let j = i+1; j < str.length+1; j++) {
-        let subString = str.slice(i,j)
-        if (isPalindrome(subString && )){
-            console.log(subString);
-        
+        let subString = str.slice(i,j);
+        if (isPalindrome(subString) && subString.length > palinLong.length){
+            // console.log(subString);
+            palinLong = subString;
         }
     }
 }
+console.log(palinLong);
+return palinLong;
 }
 longestPalindromicSubstring(str5)
+longestPalindromicSubstring(str6)
+longestPalindromicSubstring(str7)
+longestPalindromicSubstring(str8)
+longestPalindromicSubstring(str9)
